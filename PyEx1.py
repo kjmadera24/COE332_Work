@@ -1,5 +1,5 @@
 long5 = []
-with open('words', 'r') as f:
+with open('/home/kjm24/words', 'r') as f:
     long5 = f.read().splitlines()
 
 long5.sort(key=len, reverse = True)
