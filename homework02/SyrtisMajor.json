@@ -1,0 +1,34 @@
+{
+  "Sites": [
+    {
+      "Site_ID": 1,
+      "Latitude": 17.828971399464145,
+      "Longitude": 82.33621538945421,
+      "Composition": "Iron"
+    },
+    {
+      "Site_ID": 2,
+      "Latitude": 16.336245366031932,
+      "Longitude": 82.2801198176117,
+      "Composition": "Iron"
+    },
+    {
+      "Site_ID": 3,
+      "Latitude": 16.366782056270683,
+      "Longitude": 83.41498516964403,
+      "Composition": "Stony"
+    },
+    {
+      "Site_ID": 4,
+      "Latitude": 16.98845631675026,
+      "Longitude": 82.72286705416447,
+      "Composition": "Stony"
+    },
+    {
+      "Site_ID": 5,
+      "Latitude": 16.990630928039366,
+      "Longitude": 83.08509456510173,
+      "Composition": "Stony"
+    }
+  ]
+}
