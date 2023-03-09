@@ -10,13 +10,13 @@ In order to access the data you must go to the website ***https://spotthestation
 
 #### Flask App
 
-The flask app accesses the data set from the web and converts it from xml to a 
+<p>The flask app accesses the data set from the web and converts it from xml to a 
 manipulatable python dictionary. It includes 4 different app routes; one that 
 returns the entire data set, returns only the epochs in the set, returns the
 state vector from the inputted epoch, and the speed of the inputted epoch.
-In order to run the flask app you must type `flask --app ISS_Data --debug run`
-in the terminal, then in a new terminal window you will type `curl localhost:5000/` 
-followed by other routes depending on what you want to achieve.
+In order to run the flask app you must type </p> `flask --app ISS_Data --debug run`
+<p> in the terminal, then in a new terminal window you will type </p>`curl localhost:5000/` 
+<p>followed by other routes depending on what you want to achieve.</p>
 
 #### App Routes
 
