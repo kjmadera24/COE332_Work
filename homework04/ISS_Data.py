@@ -52,7 +52,6 @@ def DS_SpecificEpoch(epoch):
         if (ISSD[i]['EPOCH'] == str(epoch)):
             return ISSD[i]
 
-
 @app.route('/epochs/<string:epoch>/speed', methods=['GET'])
 def DS_EpochSpeed(epoch):
     """
