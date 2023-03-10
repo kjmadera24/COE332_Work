@@ -11,16 +11,22 @@ In order to access the data you must go to the website *https://spotthestation.n
 #### Flask App
 
 The flask app accesses the data set from the web and converts it from xml to a 
-manipulatable python dictionary. It includes 4 different app routes; one that 
-returns the entire data set, returns only the epochs in the set, returns the
-state vector from the inputted epoch, and the speed of the inputted epoch.
-In order to run the flask app you must type `flask --app ISS_Data --debug run`
-in the terminal, then in a new terminal window you will type `curl localhost:5000/` 
-followed by other routes depending on what you want to achieve.
+manipulatable python dictionary. It includes 7 different app routes as described below.
+In order to run the flask app you must pull the docker file from docker hub with the 
+`docker pull kamimadera24/iss_tracker:HW05` command in the terminal, then in a new terminal 
+window you will type your curl commands with the different routes depending on what you want to achieve.
+
+#### Docker File
+
+The docker file is pushed onto docker hub and as stated above you will need to pull it with the command
+` docker pull kamimadera24/iss_tracker:HW05` in order to run the iss_tracker script with the Flask app.
+After pulling the docker file you will need to run it within your terminal with the simple command of
+` docker run -it --rm -p 5000:5000 kamimadera24/iss_tracker:HW05`, in the event of wanting to pull someone elses docker file you must change the call to `docker pull username/filename:tag` same with the run command
+`docker run...username/filename:tag`.
 
 #### App Routes
 
-***After running the flask app you will be able to type in these app routes into a different terminal window.***
+***After running the dockerfile you will be able to type in these app routes into a different terminal window.***
 
 * `curl localhost:5000/` this will return the entire data set which will include multiple *stateVectors* dic	tionaries with 7 key values each; *EPOCH, X, Y, Z, X_DOT, Y_DOT, and Z_DOT*.
 

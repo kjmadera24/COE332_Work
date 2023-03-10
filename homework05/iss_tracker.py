@@ -68,9 +68,9 @@ def DS_SpecificEpoch(epoch: str) -> dict:
         ISSD[i] (dict): The dictionary for the statevector with the
         corresponding epoch.
    """
-   for i in range(len(ISSD)):
-       if (ISSD[i]['EPOCH'] == str(epoch)):
-           return ISSD[i]
+    for i in range(len(ISSD)):
+        if (ISSD[i]['EPOCH'] == str(epoch)):
+            return ISSD[i]
 
 @app.route('/epochs/<string:epoch>/speed', methods=['GET'])
 def DS_EpochSpeed(epoch: str) -> str:
