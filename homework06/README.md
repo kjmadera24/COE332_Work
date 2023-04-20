@@ -25,7 +25,7 @@ all the commands but one would need to pull the repository in order to run the f
 Once having pulled the repository and having the docker-compose file the user can
 type `docker-compose up --build` in order to build and run the dockerfile. <br>
 *Note: if you edit the gene_api.py file you must take down the docker-compose file 
-with * `docker-compose down` * then build and run it again. This will update the 
+with * `docker-compose down`* then build and run it again. This will update the 
 docker file allowing the use of any new additions and or edits made.*
 
 #### Docker File
