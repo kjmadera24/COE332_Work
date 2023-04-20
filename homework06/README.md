@@ -7,8 +7,8 @@ important seeing as when given a data set online, especially one as large as thi
 one, it can become very cumbersome to go through the data manually.
 In order to access the data you must go to the [HGNC website][1] and download one of the two formats provided, in this homework the [Json format][2] was used.
 
-[1]: <(https://www.genenames.org/download/archive/> "HGNC link"
-[2]: <(https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json> "Json Link"
+[1]: <https://www.genenames.org/download/archive/> "HGNC link"
+[2]: <https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json> "Json Link"
 
 #### Flask App
 
