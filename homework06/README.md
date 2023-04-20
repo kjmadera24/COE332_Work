@@ -1,11 +1,11 @@
 
 ## Jeans- I Mean Genes and Manipulating HGNC Data
 
-<p> This homework directory includes one python script that has all of the app
+This homework directory includes one python script that has all of the app
 routes needed to get different attributes from this Data set. This is
 important seeing as when given a data set online, especially one as large as this
-one, it can become very cumbersome to go through the data manually. <br>
-In order to access the data you must go to the [HGNC website][1] and download one of the two formats provided, in this homework the [Json format][2] was used. </p>
+one, it can become very cumbersome to go through the data manually.
+In order to access the data you must go to the [HGNC website][1] and download one of the two formats provided, in this homework the [Json format][2] was used.
 
 [1]: <(https://www.genenames.org/download/archive/> "HGNC link"
 [2]: <(https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json> "Json Link"
