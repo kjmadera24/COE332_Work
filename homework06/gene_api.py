@@ -7,9 +7,15 @@ import json
 app = Flask(__name__)
 
 def get_redis_client():
-      return redis.Redis(host='127.0.0.1', port=6379, db=0)
+      return redis.Redis(host='redis-db', port=6379, db=0, decode_responses=True)
 
 rd = get_redis_client()
+
+def getData():
+    response = requests.get(url='https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json')
+    dataset = response.json
+    data = dataset()['response']['docs']
+    return data
 
 @app.route('/data', methods=['POST','GET','DELETE'])
 def DataSet():
@@ -27,23 +33,22 @@ def DataSet():
         in the server to prove it.
     """
     if request.method == 'POST':
-        response = requests.get(url='https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json')
-        data = response.json
-        for item in data()['response']['docs']:
+        data = getData()
+        for item in data:
             key = f'{item["hgnc_id"]}'
             rd.set(item.get('hgnc_id'), json.dumps(item))
-            return f'data loaded\n'
+        return f'data loaded\n'
     elif request.method == 'GET':
         try: 
             rd.keys()
         except keyError:
             return("Please post data!!")
         data_list = []
-        for item in rd.keys:
+        for item in rd.keys():
             data_list.append(json.loads(rd.get(item)))
         return data_list
     elif request.method == 'DELETE':
-        redis.flushdb()
+        rd.flushdb()
         return f'data deleted, there are {len(rd.keys())} keys in the db\n' 
     else:
         return 'the method you tried does not work\n'
@@ -62,10 +67,7 @@ def DS_HGNC() -> list:
     except keyError:
         return("No data is posted.\n")
     
-    hgncID_list = []
-    for item in data()['response']['docs']:
-        hgncID_list.append(item['hgnc_id'])
-    return hgnsID_list
+    return rd.keys()
 
 @app.route('/genes/<string:hgncID>', methods=['GET'])
 def DS_SpecHGNC(hgncID: str) -> dict:
@@ -86,11 +88,8 @@ def DS_SpecHGNC(hgncID: str) -> dict:
     except keyError:
         return("No data is posted.\n")
     
-    hgncIDs = data()['response']['docs']
-    for i in range(len(hgncIDs)):
-        if(hgncIDs[i]['hgnc_id'] == hgncID):
-            ID_ouput = json.loads(rd.get(hgnc_id))
-            return ID_output
+    specHGNC = json.loads(rd.get(hgncID))
+    return specHGNC
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
