@@ -5,7 +5,10 @@
 routes needed to get different attributes from this Data set. This is
 important seeing as when given a data set online, especially one as large as this
 one, it can become very cumbersome to go through the data manually. <br>
-In order to access the data you must go to the [HGNC website](https://www.genenames.org/download/archive/) and download one of the two formats provided, in this homework the [Json format](https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json) was used. </p>
+In order to access the data you must go to the [HGNC website][1] and download one of the two formats provided, in this homework the [Json format][2] was used. </p>
+
+[1]: <(https://www.genenames.org/download/archive/> "HGNC link"
+[2]: <(https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/json/hgnc_complete_set.json> "Json Link"
 
 #### Flask App
 
