@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: kjm24-test-flask-deployment
+  labels:
+    username: kjm24
+    env: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kjm24-test-flask
+  template:
+    metadata:
+      labels:
+        app: kjm24-test-flask
+    spec:
+      containers:
+        - name: flaskdeploys
+          image: kjm24/gene_api
+          env:
+          - name: FLASK_APP
+            value: 'gene_api.py'
+          ports:
+          - name: http
+            containerPort: 5000
+
