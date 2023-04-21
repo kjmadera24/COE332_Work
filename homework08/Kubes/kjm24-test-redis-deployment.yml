@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kjm24-test-redis-deployment
+  labels:
+    username: kjm24
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kjm24-test-redis
+  template:
+    metadata:
+      labels:
+        app: kjm24-test-redis
+    spec:
+      containers:
+        - name: deploys
+          image: redis:7
+          command:  
+          volumeMounts:
+          - name: kjm24-test-redis-pvc
+            mountPath: "/data"
+      volumes:
+      - name: kjm24-test-redis-pvc
+        persistentVolumeClaim:
+          claimName: kjm24-test-redis-pvc 
+
