@@ -1,5 +1,5 @@
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kjm24-test-redis-deployment
@@ -19,11 +19,12 @@ spec:
       containers:
         - name: deploys
           image: redis:7
-          command:
+          command:  
           volumeMounts:
-            - name: kjm24-test-redis-pvc
-              mountPath: "/data"
+          - name: kjm24-test-redis-pvc
+            mountPath: "/data"
       volumes:
       - name: kjm24-test-redis-pvc
         persistentVolumeClaim:
-          claimName: kjm24-test-redis-pvc
+          claimName: kjm24-test-redis-pvc 
+
