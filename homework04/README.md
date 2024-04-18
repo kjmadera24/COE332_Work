@@ -1,5 +1,5 @@
 
-* Evaluation and Calculation of Trajectory data #
+# Evaluation and Calculation of Trajectory data #
 
 This homework directory includes one python script that has all of the app
 routes needed to get the different attributes or caclualtions wanted. This is
