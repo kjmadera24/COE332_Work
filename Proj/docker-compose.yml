@@ -1,0 +1,13 @@
+---
+version: "3"
+
+services:
+    flask-app:
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        image: kamimadera24/iss_tracker:MTProj
+        volumes:
+            - ./config.yaml:/config.yaml
+        ports: 
+            - 5000:5000
