@@ -9,7 +9,7 @@ content.
 
 In order to access the data you must go to the website *https://spotthestation.nasa.gov/trajectory_data.cfm* and download one of the two formats provided.
 
-**Flask App**
+## Flask App ##
 
 The flask app accesses the data set from the web and converts it from xml to a 
 manipulatable python dictionary. It includes 4 different app routes; one that 
@@ -19,7 +19,7 @@ In order to run the flask app you must type `flask --app ISS_Data --debug run`
 in the terminal, then in a new terminal window you will type `curl localhost:5000/` 
 followed by other routes depending on what you want to achieve.
 
-**App Routes**
+### App Routes ###
 
 *After running the flask app you will type these different app routes into a different terminal window.*
 
